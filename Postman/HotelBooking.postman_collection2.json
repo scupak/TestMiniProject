@@ -77,12 +77,12 @@
 					"raw": "{\n    \"description\": \"Room 2\"\n}"
 				},
 				"url": {
-					"raw": "https://localhost:62683/rooms",
+					"raw": "https://localhost:{{port}}/rooms",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "62683",
+					"port": "{{port}}",
 					"path": [
 						"rooms"
 					]
@@ -121,12 +121,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:62683/rooms",
+					"raw": "https://localhost:{{port}}/rooms",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "62683",
+					"port": "{{port}}",
 					"path": [
 						"rooms"
 					]
@@ -154,12 +154,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:62683/rooms/0",
+					"raw": "https://localhost:{{port}}/rooms/0",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "62683",
+					"port": "{{port}}",
 					"path": [
 						"rooms",
 						"0"
@@ -243,7 +243,7 @@
 	"variable": [
 		{
 			"key": "port",
-			"value": "62683",
+			"value": "5001",
 			"type": "string"
 		}
 	]
