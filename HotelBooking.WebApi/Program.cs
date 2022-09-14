@@ -9,10 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<HotelBookingContext>(opt => opt.UseInMemoryDatabase("HotelBookingDb"));
 
+//The scoped service will have the same lifetime as a request
 builder.Services.AddScoped<IRepository<Room>, RoomRepository>();
 builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();
 builder.Services.AddScoped<IRepository<Booking>, BookingRepository>();
 builder.Services.AddScoped<IBookingManager, BookingManager>();
+
+//The transient service will have as short a lifetime as possible
 builder.Services.AddTransient<IDbInitializer, DbInitializer>();
 
 builder.Services.AddControllers();
