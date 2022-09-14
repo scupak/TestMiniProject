@@ -4,7 +4,7 @@ using HotelBooking.UnitTests.Fakes;
 using Xunit;
 
 namespace HotelBooking.UnitTests
-{
+{/*test comment*/
     public class BookingManagerTests
     {
         private IBookingManager bookingManager;
