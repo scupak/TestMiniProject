@@ -160,15 +160,16 @@ namespace HotelBooking.UnitTests
          */
 
         [Theory]
-        [MemberData(nameof(GetData), parameters: TestData.fullyOccupiedBookings)]
+        [MemberData(nameof(GetData), parameters: TestData.DateAndExpectedDate)]
         public void GetFullyOccupiedDates_KnownOccupiedDates_ReturnsRightDates(DateTime InputStartDate, DateTime InputEndDate, List<DateTime> ExpetedfullyOccupiedDates)
         {
             //Arrange
-            
+
             // Act
-            
+            List<DateTime> result = bookingManager.GetFullyOccupiedDates(InputStartDate, InputEndDate);
             // Assert
-            
+            Assert.Equal(ExpetedfullyOccupiedDates, result);
+
         }
 
 
@@ -187,6 +188,12 @@ namespace HotelBooking.UnitTests
                                 new object[] { DateTime.Today.AddDays(10) },
                                 new object[] { DateTime.Today.AddDays(20) },
                             },
+                TestData.DateAndExpectedDate => new List<object[]>
+                            {
+                                new object[] { DateTime.Today.AddDays(10) ,DateTime.Today.AddDays(13) , new List<DateTime>{ DateTime.Today.AddDays(10) , 
+                                    DateTime.Today.AddDays(11), DateTime.Today.AddDays(12), DateTime.Today.AddDays(13) } },
+                                new object[] { DateTime.Today.AddDays(1) ,DateTime.Today.AddDays(9) , new List<DateTime>() },
+                            },
                 TestData.PastDates => new List<object[]>
                             {
                                 new object[] { DateTime.Today },
@@ -197,7 +204,6 @@ namespace HotelBooking.UnitTests
                                 new object[] { DateTime.Today.AddDays(1), DateTime.Today.AddDays(1), true, 1, 1 },
                                 new object[] { DateTime.Today.AddDays(21), DateTime.Today.AddDays(21), true, 1, 1 },
                             },
-
                 TestData.NotAvailableBookings => new List<object[]>
                             {
                                 new object[] { DateTime.Today.AddDays(10), DateTime.Today.AddDays(10), true, 1, 1 },
@@ -215,7 +221,7 @@ namespace HotelBooking.UnitTests
             NotAvailableDates,
             AvailableBookings,
             NotAvailableBookings,
-            fullyOccupiedBookings,
+            DateAndExpectedDate,
         }
 
     }
