@@ -49,7 +49,7 @@ namespace HotelBooking.UnitTests.Fakes
 
         public void RemoveAll()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
