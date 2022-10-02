@@ -46,5 +46,10 @@ namespace HotelBooking.UnitTests.Fakes
         {
             removeWasCalled = true;
         }
+
+        public void RemoveAll()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
