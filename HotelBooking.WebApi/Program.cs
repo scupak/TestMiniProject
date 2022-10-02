@@ -25,21 +25,33 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsProduction())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwagger();
+app.UseSwaggerUI();
 
-    // Initialize the database.
-    using (var scope = app.Services.CreateScope())
-    {
-        var services = scope.ServiceProvider;
-        var dbContext = services.GetService<HotelBookingContext>();
-        var dbInitializer = services.GetService<IDbInitializer>();
-        dbInitializer.Initialize(dbContext);
-    }
+// Initialize the database.
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var dbContext = services.GetService<HotelBookingContext>();
+    var dbInitializer = services.GetService<IDbInitializer>();
+    dbInitializer.Initialize(dbContext);
 }
+
+//// Configure the HTTP request pipeline.
+//if (app.Environment.IsProduction())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+
+//    // Initialize the database.
+//    using (var scope = app.Services.CreateScope())
+//    {
+//        var services = scope.ServiceProvider;
+//        var dbContext = services.GetService<HotelBookingContext>();
+//        var dbInitializer = services.GetService<IDbInitializer>();
+//        dbInitializer.Initialize(dbContext);
+//    }
+//}
 
 app.UseHttpsRedirection();
 
