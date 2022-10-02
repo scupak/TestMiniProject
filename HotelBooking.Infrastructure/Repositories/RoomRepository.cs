@@ -48,12 +48,14 @@ namespace HotelBooking.Infrastructure.Repositories
 
         public void RemoveAll()
         {
+            if (db.Room.Any()) { 
             foreach (var room in db.Room)
             {
                 db.Room.Remove(room);
             }
 
             db.SaveChanges();
+            }
 
         }
 
