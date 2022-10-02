@@ -45,5 +45,17 @@ namespace HotelBooking.Infrastructure.Repositories
             db.Room.Remove(room);
             db.SaveChanges();
         }
+
+        public void RemoveAll()
+        {
+            foreach (var room in db.Room)
+            {
+                db.Room.Remove(room);
+            }
+
+            db.SaveChanges();
+
+        }
+
     }
 }

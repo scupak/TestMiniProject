@@ -38,5 +38,10 @@ namespace HotelBooking.Infrastructure.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public void RemoveAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

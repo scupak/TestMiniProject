@@ -64,5 +64,16 @@ namespace HotelBooking.WebApi.Controllers
             }
         }
 
+        // DELETE rooms/5
+        [HttpDelete(Name = "DeleteAll")]
+        public IActionResult DeleteAll()
+        {
+           
+                repository.RemoveAll();
+                return NoContent();
+            
+            
+        }
+
     }
 }

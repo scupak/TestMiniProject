@@ -46,30 +46,21 @@ namespace HotelBooking.WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody]Booking booking)
         {
-            try
-            {
-                if (booking == null)
-                {
-                    return BadRequest();
-                }
-
-                bool created = bookingManager.CreateBooking(booking);
-
-                if (created)
-                {
-                    return CreatedAtRoute("GetBookings", null);
-                }
-                else
-                {
-                    return Conflict("The booking could not be created. All rooms are occupied. Please try another period.");
-                }
-
-            }
-            catch (ArgumentException)
+            if (booking == null)
             {
                 return BadRequest();
             }
-            
+
+            bool created = bookingManager.CreateBooking(booking);
+
+            if (created)
+            {
+                return CreatedAtRoute("GetBookings", null);
+            }
+            else
+            {
+                return Conflict("The booking could not be created. All rooms are occupied. Please try another period.");
+            }
 
         }
 

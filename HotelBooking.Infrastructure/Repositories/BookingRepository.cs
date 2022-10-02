@@ -43,5 +43,9 @@ namespace HotelBooking.Infrastructure.Repositories
             db.SaveChanges();
         }
 
+        public void RemoveAll()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

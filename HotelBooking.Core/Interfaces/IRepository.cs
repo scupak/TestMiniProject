@@ -9,5 +9,7 @@ namespace HotelBooking.Core
         void Add(T entity);
         void Edit(T entity);
         void Remove(int id);
+
+        void RemoveAll();
     }
 }
