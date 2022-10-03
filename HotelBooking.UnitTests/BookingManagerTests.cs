@@ -17,14 +17,7 @@ namespace HotelBooking.UnitTests
 
         public BookingManagerTests()
         {
-            /*
-            DateTime start = DateTime.Today.AddDays(10);
-            DateTime end = DateTime.Today.AddDays(20);
-            IRepository<Booking> bookingRepository = new FakeBookingRepository(start, end);
-            IRepository<Room> roomRepository = new FakeRoomRepository();*/
-
-            /*copy from rooms controller tests 
-             */
+      
             var rooms = new List<Room>
             {
                 new Room { Id=1, Description="A" },
@@ -100,15 +93,7 @@ namespace HotelBooking.UnitTests
             // Assert
             Assert.Equal(-1, roomId);
         }
-        /*
-          public int Id { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public bool IsActive { get; set; }
-        public int CustomerId { get; set; }
-        public int RoomId { get; set; }
-        public virtual Customer Customer { get; set; }
-        public virtual Room Room { get; set; }*/
+       
         [Theory]
         [MemberData(nameof(GetData), parameters: TestData.AvailableBookings)]
         public void CreateBooking_RoomAvailable_ReturnsTrue(DateTime startDate, DateTime endDate, bool isActive, int customerId, int roomId)
