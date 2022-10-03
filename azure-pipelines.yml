@@ -51,4 +51,4 @@ steps:
 - task: CmdLine@2
   displayName: Run Postman tests
   inputs:
-    script: 'newman run $(Build.SourcesDirectory)/Postman/HotelBooking.postman_collection6.json -k -r cli'
+    script: 'newman run $(Build.SourcesDirectory)/Postman/HotelBooking.postman_collection7.json -k -r cli'
