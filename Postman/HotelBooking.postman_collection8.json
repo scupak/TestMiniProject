@@ -1,0 +1,2465 @@
+{
+	"info": {
+		"_postman_id": "4c0d798c-d66f-4cc1-b4cf-7291f8c8b423",
+		"name": "HotelBooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12596812"
+	},
+	"item": [
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "rooms -  random room number",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 201",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//Generates a random room number to make the test repeatable\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"pm.environment.set(\"Room_Number\", random);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Room {{Room_Number}}\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms - Room 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 201",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Room 1\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms - Room 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 201",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Room 2\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms - Test for Bad Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 400",
+									"pm.test(\"Response is 400 Bad Request\", function () {",
+									"    pm.response.to.be.badRequest;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"//Tests that the API return the right status code 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Tests that the API returns a response that is json",
+									"pm.test(\"Response is json\", function () {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"//pm.test(\"Response length is correct\", function () {",
+									"//    var jsonData = pm.response.json();",
+									"//    pm.expect(jsonData.length).to.eql(2);",
+									"//});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms with new rooms every times",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"////Tests that the API return the right status code 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Tests that the API returns a response that is json",
+									"pm.test(\"Response is json\", function () {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"//Tests that the API response is the correct lenght",
+									"pm.test(\"Response length is correct\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.eql(pm.variables.get(\"rooms_lenght\"));",
+									"",
+									"});",
+									"",
+									"//Tests that the API response last room has correct id",
+									"pm.test(\"Response last room has correct id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[jsonData.length - 1].id).to.eql(pm.variables.get(\"latest_room_id\"));",
+									"",
+									"});",
+									"",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"const getRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRequest, function () {\r",
+									"        pm.sendRequest(getRequest, function (err, response) {\r",
+									"         pm.variables.set(\"latest_room_id\", response.json()[response.json().length - 1].id);\r",
+									"         pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms/0",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is badRequest\", function () {",
+									"    pm.response.to.be.badRequest;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms/0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms/{{latest_room_id}}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response has status noContent(204)\", function () {",
+									"    pm.response.to.have.status(204)",
+									"});",
+									"",
+									"    var port = pm.variables.get(\"port\");",
+									"    var latestRoomId = pm.variables.get(\"latest_room_id\");",
+									"",
+									"    const getRequest = {",
+									"        url: 'https://localhost:' + port + '/rooms/' + latestRoomId ,",
+									"        method: 'GET',",
+									"        header: {",
+									"            'Content-Type': 'application/json',",
+									"            'X-Foo': 'bar'",
+									"        },",
+									"        };",
+									"",
+									"    pm.sendRequest(getRequest, function (err, response) {",
+									"        //Tests that the booking was succesfully modified",
+									"    pm.test(\"The room was succefully deleted\", function () {",
+									"            pm.expect(response).to.be.notFound;",
+									"            });",
+									"    });    ",
+									"",
+									"     "
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"const getRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRequest, function () {\r",
+									"        pm.sendRequest(getRequest, function (err, response) {\r",
+									"         pm.variables.set(\"latest_room_id\", response.json()[response.json().length - 1].id);\r",
+									"         pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms/{{latest_room_id}}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms",
+								"{{latest_room_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms/{{latest_room_id}}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"const getRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRequest, function () {\r",
+									"        pm.sendRequest(getRequest, function (err, response) {\r",
+									"         pm.variables.set(\"latest_room_id\", response.json()[response.json().length - 1].id);\r",
+									"         pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is json\", function () {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Response has correct room id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.id).to.eql(pm.variables.get(\"latest_room_id\"));",
+									"});",
+									"",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms/{{latest_room_id}}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms",
+								"{{latest_room_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rooms/0 test for Not Found",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is 404 Not Found\", function () {",
+									"    pm.response.to.be.notFound;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/rooms/0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"rooms",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "customers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"//Tests that the API return the right status code 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Tests that the API returns a response that is json",
+									"pm.test(\"Response is json\", function () {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"//pm.test(\"Response length is correct\", function () {",
+									"//    var jsonData = pm.response.json();",
+									"//    pm.expect(jsonData.length).to.eql(2);",
+									"//});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/customers",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "bookings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"//Tests that the API return the right status code 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Tests that the API returns a response that is json",
+									"pm.test(\"Response is json\", function () {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"//pm.test(\"Response length is correct\", function () {",
+									"//    var jsonData = pm.response.json();",
+									"//    pm.expect(jsonData.length).to.eql(2);",
+									"//});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings with new booking every time",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"//Tests that the API return the right status code 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Tests that the API returns a response that is json",
+									"pm.test(\"Response is json\", function () {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"//Tests that the API response is the correct lenght",
+									"pm.test(\"Response length is correct\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.length).to.eql(pm.variables.get(\"bookings_lenght\"));",
+									"",
+									"});",
+									"",
+									"//Tests that the API response last booking has correct id",
+									"pm.test(\"Response last booking has correct id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[jsonData.length - 1].id).to.eql(pm.variables.get(\"latest_booking_id\"));",
+									"",
+									"});",
+									"",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });",
+									"",
+									"const getBookingsRequest = {",
+									"  url: 'https://localhost:' + port + '/bookings',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getBookingsRequest, function (err, response) {",
+									"        var latestBookingId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_booking_id\", latestBookingId );",
+									"        pm.variables.set(\"bookings_lenght\", response.json().length);",
+									"",
+									"            const deleteBookingRequest = {",
+									"                url: 'https://localhost:' + port + '/bookings/' + latestBookingId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteBookingRequest, function (err, response) {});",
+									"",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"var moment = require('moment');\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"const getRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRequest, function () {\r",
+									"        pm.sendRequest(getRequest, function (err, response) {\r",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;\r",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );\r",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"\r",
+									"        var startdate =  moment().format();\r",
+									"        var enddate = moment().add(15, 'days').format();\r",
+									"        pm.variables.set('startDate', startdate);\r",
+									"        pm.variables.set('endDate', enddate);\r",
+									"\r",
+									"        // Example with a full-fledged request\r",
+									"        const postRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'POST',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        body: {\r",
+									"            mode: 'raw',\r",
+									"            raw: JSON.stringify({ \r",
+									"                StartDate: startdate,\r",
+									"                EndDate: enddate,\r",
+									"                IsActive: true,\r",
+									"                CustomerId: 1,\r",
+									"                RoomId: latestRoomId\r",
+									"        })\r",
+									"        }\r",
+									"        };\r",
+									"\r",
+									"        const getRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'GET',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        };\r",
+									"\r",
+									"        pm.sendRequest(postRequest, function () {\r",
+									"                pm.sendRequest(getRequest, function (err, response) {\r",
+									"                pm.variables.set(\"latest_booking_id\", response.json()[response.json().length - 1].id);\r",
+									"                pm.variables.set(\"bookings_lenght\", response.json().length);\r",
+									"            });\r",
+									"        });\r",
+									"\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings/{{latest_booking_id}}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"//Tests that the API return the right status code 200",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Tests that the API returns a response that is json",
+									"pm.test(\"Response is json\", function () {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response has correct booking id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.id).to.eql(pm.variables.get(\"latest_booking_id\"));",
+									"});",
+									"",
+									"",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });",
+									"",
+									"const getBookingsRequest = {",
+									"  url: 'https://localhost:' + port + '/bookings',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getBookingsRequest, function (err, response) {",
+									"        var latestBookingId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_booking_id\", latestBookingId );",
+									"        pm.variables.set(\"bookings_lenght\", response.json().length);",
+									"",
+									"            const deleteBookingRequest = {",
+									"                url: 'https://localhost:' + port + '/bookings/' + latestBookingId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteBookingRequest, function (err, response) {});",
+									"",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"var moment = require('moment');\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"const getRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRequest, function () {\r",
+									"        pm.sendRequest(getRequest, function (err, response) {\r",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;\r",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );\r",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"\r",
+									"        var startdate =  moment().format();\r",
+									"        var enddate = moment().add(15, 'days').format();\r",
+									"        pm.variables.set('startDate', startdate);\r",
+									"        pm.variables.set('endDate', enddate);\r",
+									"\r",
+									"        // Example with a full-fledged request\r",
+									"        const postRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'POST',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        body: {\r",
+									"            mode: 'raw',\r",
+									"            raw: JSON.stringify({ \r",
+									"                StartDate: startdate,\r",
+									"                EndDate: enddate,\r",
+									"                IsActive: true,\r",
+									"                CustomerId: 1,\r",
+									"                RoomId: latestRoomId\r",
+									"        })\r",
+									"        }\r",
+									"        };\r",
+									"\r",
+									"        const getRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'GET',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        };\r",
+									"\r",
+									"        pm.sendRequest(postRequest, function () {\r",
+									"                pm.sendRequest(getRequest, function (err, response) {\r",
+									"                pm.variables.set(\"latest_booking_id\", response.json()[response.json().length - 1].id);\r",
+									"                pm.variables.set(\"bookings_lenght\", response.json().length);\r",
+									"            });\r",
+									"        });\r",
+									"\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings/{{latest_booking_id}}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings",
+								"{{latest_booking_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings/0 Test for Not Found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is 404 Not Found\", function () {",
+									"    pm.response.to.be.notFound;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings/0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 201",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    });",
+									"",
+									"    ",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });",
+									"",
+									"const getBookingsRequest = {",
+									"  url: 'https://localhost:' + port + '/bookings',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getBookingsRequest, function (err, response) {",
+									"        var latestBookingId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_booking_id\", latestBookingId );",
+									"        pm.variables.set(\"bookings_lenght\", response.json().length);",
+									"",
+									"            const deleteBookingRequest = {",
+									"                url: 'https://localhost:' + port + '/bookings/' + latestBookingId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteBookingRequest, function (err, response) {});",
+									"",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment');\r",
+									"\r",
+									"pm.variables.set('startDate', moment().format());\r",
+									"pm.variables.set('endDate', moment().add(15, 'days').format());\r",
+									"\r",
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"const getRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRequest, function () {\r",
+									"        pm.sendRequest(getRequest, function (err, response) {\r",
+									"         pm.variables.set(\"latest_room_id\", response.json()[response.json().length - 1].id);\r",
+									"         pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"StartDate\": \"{{startDate}}\",\r\n    \"EndDate\": \"{{endDate}}\",\r\n    \"IsActive\": true,\r\n    \"CustomerId\": 1,\r\n    \"RoomId\": {{latest_room_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings - Test for Bad Request when endDate is soner that startDate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 400",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.be.badRequest;;",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment');\r",
+									"\r",
+									"pm.variables.set('startDate', moment().format());\r",
+									"pm.variables.set('endDate', moment().subtract(10, 'days').format())\r",
+									"\r",
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"StartDate\": \"{{startDate}}\",\r\n    \"EndDate\": \"{{endDate}}\",\r\n    \"IsActive\": true,\r\n    \"CustomerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings - Test for Unsupported Media Type",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 415",
+									"pm.test(\"Response is 415 Unsupported Media Type\", function () {",
+									"    pm.response.to.have.status(415);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings - Test for Conflict Occupied Room",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"",
+									"//Tests that the API return the right status code 409",
+									"pm.test(\"Status code is 409\", function () {",
+									"    pm.response.to.have.status(409);",
+									"    });",
+									"",
+									"pm.test(\"Contains right error message\", function () {",
+									"    pm.response.to.have.body(\"The booking could not be created. All rooms are occupied. Please try another period.\");",
+									"    });",
+									"",
+									"    ",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"/*",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });*/",
+									"",
+									"const getBookingsRequest = {",
+									"  url: 'https://localhost:' + port + '/bookings',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getBookingsRequest, function (err, response) {",
+									"        var latestBookingId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_booking_id\", latestBookingId );",
+									"        pm.variables.set(\"bookings_lenght\", response.json().length);",
+									"",
+									"            const deleteBookingRequest = {",
+									"                url: 'https://localhost:' + port + '/bookings/' + latestBookingId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteBookingRequest, function (err, response) {});",
+									"",
+									"    });",
+									"",
+									"    ",
+									"    const getRoomRequest = {",
+									"    url: 'https://localhost:' + port + '/rooms',",
+									"    method: 'GET',",
+									"    header: {",
+									"        'Content-Type': 'application/json',",
+									"        'X-Foo': 'bar'",
+									"    },",
+									"    };",
+									"",
+									"    pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });",
+									"    "
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"var moment = require('moment');\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"const getRoomRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									" pm.sendRequest(getRoomRequest, function (err, response) {\r",
+									"        const responeJson = response.json();\r",
+									"        if(response.json().length > 0 && responeJson[1] != undefined){\r",
+									"            for (const element of responeJson){\r",
+									"            const deleteRoomRequest = {\r",
+									"                url: 'https://localhost:' + port + '/rooms/' + element.id,\r",
+									"                method: 'DELETE',\r",
+									"                header: {\r",
+									"                    'Content-Type': 'application/json',\r",
+									"                    'X-Foo': 'bar'\r",
+									"            },\r",
+									"            };\r",
+									"\r",
+									"            pm.sendRequest(deleteRoomRequest, function (err, response) {});\r",
+									"        \r",
+									"        }\r",
+									"\r",
+									"        }\r",
+									"\r",
+									"    });\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRoomRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRoomRequest, function () {\r",
+									"        pm.sendRequest(getRoomRequest, function (err, response) {\r",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;\r",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );\r",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"\r",
+									"        var startdate =  moment().format();\r",
+									"        var enddate = moment().add(15, 'days').format();\r",
+									"        pm.variables.set('startDate', startdate);\r",
+									"        pm.variables.set('endDate', enddate);\r",
+									"\r",
+									"        // Example with a full-fledged request\r",
+									"        const postBookingRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'POST',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        body: {\r",
+									"            mode: 'raw',\r",
+									"            raw: JSON.stringify({ \r",
+									"                StartDate: startdate,\r",
+									"                EndDate: enddate,\r",
+									"                IsActive: true,\r",
+									"                CustomerId: 1,\r",
+									"                RoomId: latestRoomId\r",
+									"        })\r",
+									"        }\r",
+									"        };\r",
+									"\r",
+									"        const getBookingRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'GET',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        };\r",
+									"\r",
+									"        pm.sendRequest(postBookingRequest, function () {\r",
+									"                pm.sendRequest(getBookingRequest, function (err, response) {\r",
+									"                pm.variables.set(\"latest_booking_id\", response.json()[response.json().length - 1].id);\r",
+									"                pm.variables.set(\"bookings_lenght\", response.json().length);\r",
+									"            });\r",
+									"        });\r",
+									"\r",
+									"\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"StartDate\": \"{{startDate}}\",\r\n    \"EndDate\": \"{{endDate}}\",\r\n    \"IsActive\": true,\r\n    \"CustomerId\": 1,\r\n    \"RoomId\": {{latest_room_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings/{{latest_booking_id}}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 204",
+									"pm.test(\"Status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"    });",
+									"",
+									"",
+									"",
+									"    var port = pm.variables.get(\"port\");",
+									"    var latestBookingId = pm.variables.get(\"latest_booking_id\");",
+									"",
+									"    const getRequest = {",
+									"        url: 'https://localhost:' + port + '/bookings/' + latestBookingId ,",
+									"        method: 'GET',",
+									"        header: {",
+									"            'Content-Type': 'application/json',",
+									"            'X-Foo': 'bar'",
+									"        },",
+									"        };",
+									"",
+									"    pm.sendRequest(getRequest, function (err, response) {",
+									"        //Tests that the booking was succesfully modified",
+									"    pm.test(\"The booking was succesfully modified\", function () {",
+									"            const responseJson = response.json();",
+									"                pm.expect(responseJson.isActive).to.eql(false);",
+									"                pm.expect(responseJson.customerId).to.eql(2);",
+									"            });",
+									"    });    ",
+									"",
+									"",
+									"    ",
+									"//Post test cleanup",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });",
+									"",
+									"const getBookingsRequest = {",
+									"  url: 'https://localhost:' + port + '/bookings',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getBookingsRequest, function (err, response) {",
+									"        var latestBookingId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_booking_id\", latestBookingId );",
+									"        pm.variables.set(\"bookings_lenght\", response.json().length);",
+									"",
+									"            const deleteBookingRequest = {",
+									"                url: 'https://localhost:' + port + '/bookings/' + latestBookingId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteBookingRequest, function (err, response) {});",
+									"",
+									"    });",
+									"",
+									"     "
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"var moment = require('moment');\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"const getRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRequest, function () {\r",
+									"        pm.sendRequest(getRequest, function (err, response) {\r",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;\r",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );\r",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"\r",
+									"        var startdate =  moment().format();\r",
+									"        var enddate = moment().add(15, 'days').format();\r",
+									"        pm.variables.set('startDate', startdate);\r",
+									"        pm.variables.set('endDate', enddate);\r",
+									"\r",
+									"        // Example with a full-fledged request\r",
+									"        const postRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'POST',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        body: {\r",
+									"            mode: 'raw',\r",
+									"            raw: JSON.stringify({ \r",
+									"                StartDate: startdate,\r",
+									"                EndDate: enddate,\r",
+									"                IsActive: true,\r",
+									"                CustomerId: 1,\r",
+									"                RoomId: latestRoomId\r",
+									"        })\r",
+									"        }\r",
+									"        };\r",
+									"\r",
+									"        const getRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'GET',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        };\r",
+									"\r",
+									"        pm.sendRequest(postRequest, function () {\r",
+									"                pm.sendRequest(getRequest, function (err, response) {\r",
+									"                pm.variables.set(\"latest_booking_id\", response.json()[response.json().length - 1].id);\r",
+									"                pm.variables.set(\"bookings_lenght\", response.json().length);\r",
+									"            });\r",
+									"        });\r",
+									"\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": {{latest_booking_id}},\r\n    \"StartDate\": \"{{startDate}}\",\r\n    \"EndDate\": \"{{endDate}}\",\r\n    \"IsActive\": false,\r\n    \"CustomerId\": 2,\r\n    \"RoomId\": {{latest_room_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings/{{latest_booking_id}}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings",
+								"{{latest_booking_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings - Test for Bad Request booking id doesn't match",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Tests that the API return the right status code 400",
+									"pm.test(\"Response is 400 Bad Request\", function () {",
+									"    pm.response.to.be.badRequest;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"var moment = require('moment');\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"var startdate =  moment().format();\r",
+									"var enddate = moment().add(15, 'days').format();\r",
+									"pm.variables.set('startDate', startdate);\r",
+									"pm.variables.set('endDate', enddate);\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"StartDate\": \"{{startDate}}\",\r\n    \"EndDate\": \"{{endDate}}\",\r\n    \"IsActive\": true,\r\n    \"CustomerId\": 1,\r\n    \"RoomId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings/200",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings",
+								"200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings - Test for Not Found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is 404 Not Found\", function () {",
+									"    pm.response.to.be.notFound;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"var moment = require('moment');\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"var startdate =  moment().format();\r",
+									"var enddate = moment().add(15, 'days').format();\r",
+									"pm.variables.set('startDate', startdate);\r",
+									"pm.variables.set('endDate', enddate);\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 0,\r\n    \"StartDate\": \"{{startDate}}\",\r\n    \"EndDate\": \"{{endDate}}\",\r\n    \"IsActive\": true,\r\n    \"CustomerId\": 1,\r\n    \"RoomId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings/0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings/{{latest_booking_id}}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Response has status noContent(204)\", function () {",
+									"    pm.response.to.have.status(204)",
+									"});",
+									"",
+									"    var port = pm.variables.get(\"port\");",
+									"    var latestBookingID = pm.variables.get(\"latest_booking_id\");",
+									"",
+									"    const getRequest = {",
+									"        url: 'https://localhost:' + port + '/bookings/' + latestBookingID ,",
+									"        method: 'GET',",
+									"        header: {",
+									"            'Content-Type': 'application/json',",
+									"            'X-Foo': 'bar'",
+									"        },",
+									"        };",
+									"",
+									"    pm.sendRequest(getRequest, function (err, response) {",
+									"        //Tests that the booking was succesfully modified",
+									"    pm.test(\"The booking was succefully deleted\", function () {",
+									"            pm.expect(response).to.be.notFound;",
+									"            });",
+									"    });    ",
+									"",
+									"//Post test cleanup",
+									"var port = pm.variables.get(\"port\");",
+									"",
+									"const getRoomRequest = {",
+									"  url: 'https://localhost:' + port + '/rooms',",
+									"  method: 'GET',",
+									"  header: {",
+									"    'Content-Type': 'application/json',",
+									"    'X-Foo': 'bar'",
+									"  },",
+									"};",
+									"",
+									" pm.sendRequest(getRoomRequest, function (err, response) {",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);",
+									"",
+									"            const deleteRoomRequest = {",
+									"                url: 'https://localhost:' + port + '/rooms/' + latestRoomId,",
+									"                method: 'DELETE',",
+									"                header: {",
+									"                    'Content-Type': 'application/json',",
+									"                    'X-Foo': 'bar'",
+									"            },",
+									"            };",
+									"",
+									"             pm.sendRequest(deleteRoomRequest, function (err, response) {});",
+									"",
+									"    });",
+									"",
+									"     "
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var port = pm.variables.get(\"port\");\r",
+									"\r",
+									"var moment = require('moment');\r",
+									"\r",
+									"var min = Math.ceil(0)\r",
+									"var max = Math.floor(1000)\r",
+									"var random = Math.floor(Math.random() * (max - min) + min);\r",
+									"\r",
+									"// Example with a full-fledged request\r",
+									"const postRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'POST',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"  body: {\r",
+									"    mode: 'raw',\r",
+									"    raw: JSON.stringify({  description: \"Room \" + random})\r",
+									"  }\r",
+									"};\r",
+									"\r",
+									"const getRequest = {\r",
+									"  url: 'https://localhost:' + port + '/rooms',\r",
+									"  method: 'GET',\r",
+									"  header: {\r",
+									"    'Content-Type': 'application/json',\r",
+									"    'X-Foo': 'bar'\r",
+									"  },\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(postRequest, function () {\r",
+									"        pm.sendRequest(getRequest, function (err, response) {\r",
+									"        var latestRoomId = response.json()[response.json().length - 1].id;\r",
+									"        pm.variables.set(\"latest_room_id\", latestRoomId );\r",
+									"        pm.variables.set(\"rooms_lenght\", response.json().length);\r",
+									"\r",
+									"        var startdate =  moment().format();\r",
+									"        var enddate = moment().add(15, 'days').format();\r",
+									"        pm.variables.set('startDate', startdate);\r",
+									"        pm.variables.set('endDate', enddate);\r",
+									"\r",
+									"        // Example with a full-fledged request\r",
+									"        const postRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'POST',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        body: {\r",
+									"            mode: 'raw',\r",
+									"            raw: JSON.stringify({ \r",
+									"                StartDate: startdate,\r",
+									"                EndDate: enddate,\r",
+									"                IsActive: true,\r",
+									"                CustomerId: 1,\r",
+									"                RoomId: latestRoomId\r",
+									"        })\r",
+									"        }\r",
+									"        };\r",
+									"\r",
+									"        const getRequest = {\r",
+									"        url: 'https://localhost:' + port + '/bookings',\r",
+									"        method: 'GET',\r",
+									"        header: {\r",
+									"            'Content-Type': 'application/json',\r",
+									"            'X-Foo': 'bar'\r",
+									"        },\r",
+									"        };\r",
+									"\r",
+									"        pm.sendRequest(postRequest, function () {\r",
+									"                pm.sendRequest(getRequest, function (err, response) {\r",
+									"                pm.variables.set(\"latest_booking_id\", response.json()[response.json().length - 1].id);\r",
+									"                pm.variables.set(\"bookings_lenght\", response.json().length);\r",
+									"            });\r",
+									"        });\r",
+									"\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings/{{latest_booking_id}}",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings",
+								"{{latest_booking_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookings/0 - Test for Not Found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response is NotFound\", function () {",
+									"    pm.response.to.be.notFound;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:{{port}}/bookings/0",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bookings",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "5001",
+			"type": "string"
+		},
+		{
+			"key": "latest_room_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "latest_booking_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
