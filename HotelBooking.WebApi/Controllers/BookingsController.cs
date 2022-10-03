@@ -68,7 +68,7 @@ namespace HotelBooking.WebApi.Controllers
             }
             catch (ArgumentException e)
             {
-                return BadRequest();
+                return BadRequest(e.Message);
             }
 
         }
