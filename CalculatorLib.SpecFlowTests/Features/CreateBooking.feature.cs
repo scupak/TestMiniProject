@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace HotelBooking.Spec
+namespace HotelBooking.Spec.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -24,7 +24,7 @@ namespace HotelBooking.Spec
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private string[] _featureTags = ((string[])(null));
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
@@ -40,8 +40,8 @@ namespace HotelBooking.Spec
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "CreateBooking", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "CreateBooking", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
+                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -51,27 +51,27 @@ namespace HotelBooking.Spec
             testRunner = null;
         }
         
-        public void TestInitialize()
+        public virtual void TestInitialize()
         {
         }
         
-        public void TestTearDown()
+        public virtual void TestTearDown()
         {
             testRunner.OnScenarioEnd();
         }
         
-        public void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
             testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<Xunit.Abstractions.ITestOutputHelper>(_testOutputHelper);
         }
         
-        public void ScenarioStart()
+        public virtual void ScenarioStart()
         {
             testRunner.OnScenarioStart();
         }
         
-        public void ScenarioCleanup()
+        public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
@@ -87,7 +87,7 @@ namespace HotelBooking.Spec
         [Xunit.TraitAttribute("Category", "mytag")]
         [Xunit.InlineDataAttribute("50", "70", "120", new string[0])]
         [Xunit.InlineDataAttribute("30", "20", "50", new string[0])]
-        public void AddTwoNumbers(string firstNumber, string secondNumber, string sum, string[] exampleTags)
+        public virtual void AddTwoNumbers(string firstNumber, string secondNumber, string sum, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -100,11 +100,21 @@ namespace HotelBooking.Spec
             argumentsOfScenario.Add("firstNumber", firstNumber);
             argumentsOfScenario.Add("secondNumber", secondNumber);
             argumentsOfScenario.Add("sum", sum);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
             {
                 testRunner.SkipScenario();
             }

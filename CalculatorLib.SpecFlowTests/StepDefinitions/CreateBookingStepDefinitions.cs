@@ -1,7 +1,7 @@
 ﻿using TechTalk.SpecFlow;
 using Xunit;
 
-namespace HotelBooking.Spec
+namespace HotelBooking.Spec.StepDefinitions
 {
     [Binding]
     public class CreateBooking
@@ -24,7 +24,7 @@ namespace HotelBooking.Spec
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
-            
+
         }
 
         [Then(@"the result should be (.*) on the screen")]
