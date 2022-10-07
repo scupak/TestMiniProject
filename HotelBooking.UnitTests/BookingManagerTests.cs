@@ -54,9 +54,7 @@ namespace HotelBooking.UnitTests
 
             bookingManager = new BookingManager(fakeBookingRepository.Object, fakeRoomRepository.Object);
         }
-        /*
-         * [UnitOfWorkName]_[ScenarioUnderTest]_[ExpectedBehavior]
-        */
+        
         [Theory]
         [MemberData(nameof(GetData), parameters: TestData.PastDates)]
         public void FindAvailableRoom_StartDateNotInTheFuture_ThrowsArgumentException(DateTime date)
