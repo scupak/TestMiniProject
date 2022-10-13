@@ -65,7 +65,7 @@ namespace HotelBooking.Spec.StepDefinitions
             _action = () => bookingManager.CreateBooking(new Booking { StartDate = _startDate, EndDate = _endDate });
         }
 
-        [Then(@"Then an argument exception should be thrown")]
+        [Then(@"an argument exception should be thrown")]
         public void ThenThenAnArgumentExceptionShouldBeThrown()
         {
 
@@ -97,13 +97,13 @@ namespace HotelBooking.Spec.StepDefinitions
             _fullyOccupiedEndDate = DateTime.Today.AddDays(endDays);
         }
 
-        [Then(@"Then the booking should be created")]
+        [Then(@"the booking should be created")]
         public void ThenThenTheBookingShouldBeCreated()
         {
             Assert.True(_method());
         }
 
-        [Then(@"Then the booking should not be created")]
+        [Then(@"the booking should not be created")]
         public void ThenThenTheBookingShouldNotBeCreated()
         {
             Assert.False(_method()); ;
