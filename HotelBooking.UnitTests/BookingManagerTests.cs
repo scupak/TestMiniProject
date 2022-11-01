@@ -160,8 +160,8 @@ namespace HotelBooking.UnitTests
                             },
                 TestData.AvailableBookings => new List<object[]>
                             {
-                                new object[] { DateTime.Today.AddDays(1), DateTime.Today.AddDays(1), true, 1, 1 },
-                                new object[] { DateTime.Today.AddDays(21), DateTime.Today.AddDays(21), true, 1, 1 },
+                                new object[] { DateTime.Today.AddDays(1), DateTime.Today.AddDays(2), true, 1, 1 },
+                                new object[] { DateTime.Today.AddDays(21), DateTime.Today.AddDays(22), true, 1, 1 },
                             },
                 TestData.NotAvailableBookings => new List<object[]>
                             {
