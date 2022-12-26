@@ -1,0 +1,1081 @@
+{
+  "HotelBooking.Core.dll": {
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Core\\Entities\\Booking.cs": {
+      "HotelBooking.Core.Booking": {
+        "System.Int32 HotelBooking.Core.Booking::get_Id()": {
+          "Lines": {
+            "7": 24
+          },
+          "Branches": []
+        },
+        "System.DateTime HotelBooking.Core.Booking::get_StartDate()": {
+          "Lines": {
+            "8": 72
+          },
+          "Branches": []
+        },
+        "System.DateTime HotelBooking.Core.Booking::get_EndDate()": {
+          "Lines": {
+            "9": 52
+          },
+          "Branches": []
+        },
+        "System.Boolean HotelBooking.Core.Booking::get_IsActive()": {
+          "Lines": {
+            "10": 76
+          },
+          "Branches": []
+        },
+        "System.Int32 HotelBooking.Core.Booking::get_CustomerId()": {
+          "Lines": {
+            "11": 28
+          },
+          "Branches": []
+        },
+        "System.Int32 HotelBooking.Core.Booking::get_RoomId()": {
+          "Lines": {
+            "12": 50
+          },
+          "Branches": []
+        },
+        "HotelBooking.Core.Customer HotelBooking.Core.Booking::get_Customer()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "HotelBooking.Core.Room HotelBooking.Core.Booking::get_Room()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Core\\Entities\\Customer.cs": {
+      "HotelBooking.Core.Customer": {
+        "System.Int32 HotelBooking.Core.Customer::get_Id()": {
+          "Lines": {
+            "5": 0
+          },
+          "Branches": []
+        },
+        "System.String HotelBooking.Core.Customer::get_Name()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.String HotelBooking.Core.Customer::get_Email()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Core\\Entities\\Room.cs": {
+      "HotelBooking.Core.Room": {
+        "System.Int32 HotelBooking.Core.Room::get_Id()": {
+          "Lines": {
+            "5": 59
+          },
+          "Branches": []
+        },
+        "System.String HotelBooking.Core.Room::get_Description()": {
+          "Lines": {
+            "6": 34
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Core\\Services\\BookingManager.cs": {
+      "HotelBooking.Core.BookingManager": {
+        "System.Boolean HotelBooking.Core.BookingManager::CreateBooking(HotelBooking.Core.Booking)": {
+          "Lines": {
+            "20": 4,
+            "21": 4,
+            "23": 4,
+            "24": 2,
+            "25": 2,
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "31": 2,
+            "32": 2,
+            "34": 4
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 29,
+              "EndOffset": 31,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 23,
+              "Offset": 29,
+              "EndOffset": 65,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Int32 HotelBooking.Core.BookingManager::FindAvailableRoom(System.DateTime,System.DateTime)": {
+          "Lines": {
+            "37": 10,
+            "38": 10,
+            "39": 2,
+            "41": 28,
+            "42": 44,
+            "43": 12,
+            "44": 32,
+            "45": 24,
+            "46": 24,
+            "47": 4,
+            "48": 4,
+            "50": 8,
+            "51": 4,
+            "52": 8
+          },
+          "Branches": [
+            {
+              "Line": 38,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 8
+            },
+            {
+              "Line": 38,
+              "Offset": 37,
+              "EndOffset": 58,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 38,
+              "Offset": 61,
+              "EndOffset": 63,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 38,
+              "Offset": 61,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 8
+            },
+            {
+              "Line": 42,
+              "Offset": 254,
+              "EndOffset": 142,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 12
+            },
+            {
+              "Line": 45,
+              "Offset": 193,
+              "EndOffset": 195,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 10
+            },
+            {
+              "Line": 45,
+              "Offset": 193,
+              "EndOffset": 219,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 20
+            },
+            {
+              "Line": 45,
+              "Offset": 228,
+              "EndOffset": 230,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 4
+            },
+            {
+              "Line": 45,
+              "Offset": 228,
+              "EndOffset": 247,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 8
+            },
+            {
+              "Line": 42,
+              "Offset": 254,
+              "EndOffset": 256,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 4
+            },
+            {
+              "Line": 45,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 45,
+              "Offset": 17,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 10
+            },
+            {
+              "Line": 45,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 10
+            },
+            {
+              "Line": 45,
+              "Offset": 36,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Collections.Generic.List`1<System.DateTime> HotelBooking.Core.BookingManager::GetFullyOccupiedDates(System.DateTime,System.DateTime)": {
+          "Lines": {
+            "55": 2,
+            "56": 2,
+            "57": 0,
+            "59": 2,
+            "60": 2,
+            "61": 2,
+            "63": 2,
+            "64": 2,
+            "65": 30,
+            "66": 13,
+            "67": 13,
+            "68": 26,
+            "69": 13,
+            "70": 13,
+            "71": 4,
+            "72": 13,
+            "73": 2,
+            "74": 2,
+            "75": 2
+          },
+          "Branches": [
+            {
+              "Line": 56,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 10,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 63,
+              "Offset": 68,
+              "EndOffset": 70,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 65,
+              "Offset": 189,
+              "EndOffset": 88,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 13
+            },
+            {
+              "Line": 70,
+              "Offset": 127,
+              "EndOffset": 129,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 4
+            },
+            {
+              "Line": 70,
+              "Offset": 127,
+              "EndOffset": 143,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 13
+            },
+            {
+              "Line": 65,
+              "Offset": 189,
+              "EndOffset": 191,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 63,
+              "Offset": 68,
+              "EndOffset": 192,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 68,
+              "Offset": 6,
+              "EndOffset": 8,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 26
+            },
+            {
+              "Line": 68,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 8
+            },
+            {
+              "Line": 68,
+              "Offset": 6,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 18
+            },
+            {
+              "Line": 68,
+              "Offset": 25,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 18
+            }
+          ]
+        },
+        "System.Void HotelBooking.Core.BookingManager::.ctor(HotelBooking.Core.IRepository`1<HotelBooking.Core.Booking>,HotelBooking.Core.IRepository`1<HotelBooking.Core.Room>)": {
+          "Lines": {
+            "13": 12,
+            "14": 12,
+            "15": 12,
+            "16": 12,
+            "17": 12
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "HotelBooking.Infrastructure.dll": {
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Infrastructure\\DbInitializer.cs": {
+      "HotelBooking.Infrastructure.DbInitializer": {
+        "System.Void HotelBooking.Infrastructure.DbInitializer::Initialize(HotelBooking.Infrastructure.HotelBookingContext)": {
+          "Lines": {
+            "12": 0,
+            "16": 0,
+            "20": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 40,
+              "EndOffset": 48,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Infrastructure\\HotelBookingContext.cs": {
+      "HotelBooking.Infrastructure.HotelBookingContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<HotelBooking.Core.Booking> HotelBooking.Infrastructure.HotelBookingContext::get_Booking()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<HotelBooking.Core.Room> HotelBooking.Infrastructure.HotelBookingContext::get_Room()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<HotelBooking.Core.Customer> HotelBooking.Infrastructure.HotelBookingContext::get_Customer()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.HotelBookingContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<HotelBooking.Infrastructure.HotelBookingContext>)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Infrastructure\\Repositories\\BookingRepository.cs": {
+      "HotelBooking.Infrastructure.Repositories.BookingRepository": {
+        "System.Void HotelBooking.Infrastructure.Repositories.BookingRepository::Add(HotelBooking.Core.Booking)": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.BookingRepository::Edit(HotelBooking.Core.Booking)": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        },
+        "HotelBooking.Core.Booking HotelBooking.Infrastructure.Repositories.BookingRepository::Get(System.Int32)": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<HotelBooking.Core.Booking> HotelBooking.Infrastructure.Repositories.BookingRepository::GetAll()": {
+          "Lines": {
+            "35": 0,
+            "36": 0,
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.BookingRepository::Remove(System.Int32)": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.BookingRepository::RemoveAll()": {
+          "Lines": {
+            "47": 0,
+            "48": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.BookingRepository::.ctor(HotelBooking.Infrastructure.HotelBookingContext)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Infrastructure\\Repositories\\CustomerRepository.cs": {
+      "HotelBooking.Infrastructure.Repositories.CustomerRepository": {
+        "System.Void HotelBooking.Infrastructure.Repositories.CustomerRepository::Add(HotelBooking.Core.Customer)": {
+          "Lines": {
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.CustomerRepository::Edit(HotelBooking.Core.Customer)": {
+          "Lines": {
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        },
+        "HotelBooking.Core.Customer HotelBooking.Infrastructure.Repositories.CustomerRepository::Get(System.Int32)": {
+          "Lines": {
+            "28": 0,
+            "29": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<HotelBooking.Core.Customer> HotelBooking.Infrastructure.Repositories.CustomerRepository::GetAll()": {
+          "Lines": {
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.CustomerRepository::Remove(System.Int32)": {
+          "Lines": {
+            "38": 0,
+            "39": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.CustomerRepository::RemoveAll()": {
+          "Lines": {
+            "43": 0,
+            "44": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.CustomerRepository::.ctor(HotelBooking.Infrastructure.HotelBookingContext)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.Infrastructure\\Repositories\\RoomRepository.cs": {
+      "HotelBooking.Infrastructure.Repositories.RoomRepository": {
+        "System.Void HotelBooking.Infrastructure.Repositories.RoomRepository::Add(HotelBooking.Core.Room)": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.RoomRepository::Edit(HotelBooking.Core.Room)": {
+          "Lines": {
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        },
+        "HotelBooking.Core.Room HotelBooking.Infrastructure.Repositories.RoomRepository::Get(System.Int32)": {
+          "Lines": {
+            "29": 0,
+            "32": 0,
+            "33": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<HotelBooking.Core.Room> HotelBooking.Infrastructure.Repositories.RoomRepository::GetAll()": {
+          "Lines": {
+            "36": 0,
+            "37": 0,
+            "38": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.RoomRepository::Remove(System.Int32)": {
+          "Lines": {
+            "41": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.RoomRepository::RemoveAll()": {
+          "Lines": {
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "57": 0,
+            "58": 0,
+            "60": 0
+          },
+          "Branches": [
+            {
+              "Line": 51,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 75,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 75,
+              "EndOffset": 77,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 19,
+              "EndOffset": 103,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void HotelBooking.Infrastructure.Repositories.RoomRepository::.ctor(HotelBooking.Infrastructure.HotelBookingContext)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "HotelBooking.WebApi.dll": {
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.WebApi\\Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "6": 0,
+            "10": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "19": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "28": 0,
+            "29": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "56": 0,
+            "58": 0,
+            "60": 0,
+            "62": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.WebApi\\Controllers\\BookingsController.cs": {
+      "HotelBooking.WebApi.Controllers.BookingsController": {
+        "System.Collections.Generic.IEnumerable`1<HotelBooking.Core.Booking> HotelBooking.WebApi.Controllers.BookingsController::Get()": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult HotelBooking.WebApi.Controllers.BookingsController::Get(System.Int32)": {
+          "Lines": {
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": [
+            {
+              "Line": 38,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 20,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult HotelBooking.WebApi.Controllers.BookingsController::Post(HotelBooking.Core.Booking)": {
+          "Lines": {
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "54": 0,
+            "55": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "64": 0,
+            "65": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "74": 0
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 7,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 37,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult HotelBooking.WebApi.Controllers.BookingsController::Put(System.Int32,HotelBooking.Core.Booking)": {
+          "Lines": {
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "85": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "95": 0,
+            "96": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0
+          },
+          "Branches": [
+            {
+              "Line": 80,
+              "Offset": 2,
+              "EndOffset": 4,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 2,
+              "EndOffset": 18,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 21,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 52,
+              "EndOffset": 54,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 52,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult HotelBooking.WebApi.Controllers.BookingsController::Delete(System.Int32)": {
+          "Lines": {
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0
+          },
+          "Branches": [
+            {
+              "Line": 106,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 106,
+              "Offset": 18,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void HotelBooking.WebApi.Controllers.BookingsController::.ctor(HotelBooking.Core.IRepository`1<HotelBooking.Core.Booking>,HotelBooking.Core.IRepository`1<HotelBooking.Core.Room>,HotelBooking.Core.IRepository`1<HotelBooking.Core.Customer>,HotelBooking.Core.IBookingManager)": {
+          "Lines": {
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.WebApi\\Controllers\\CustomersController.cs": {
+      "HotelBooking.WebApi.Controllers.CustomersController": {
+        "System.Collections.Generic.IEnumerable`1<HotelBooking.Core.Customer> HotelBooking.WebApi.Controllers.CustomersController::Get()": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.WebApi.Controllers.CustomersController::.ctor(HotelBooking.Core.IRepository`1<HotelBooking.Core.Customer>)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\anton\\Source\\Testing\\TestMiniProject\\HotelBooking.WebApi\\Controllers\\RoomsController.cs": {
+      "HotelBooking.WebApi.Controllers.RoomsController": {
+        "System.Collections.Generic.IEnumerable`1<HotelBooking.Core.Room> HotelBooking.WebApi.Controllers.RoomsController::Get()": {
+          "Lines": {
+            "23": 1,
+            "24": 1,
+            "25": 1
+          },
+          "Branches": []
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult HotelBooking.WebApi.Controllers.RoomsController::Get(System.Int32)": {
+          "Lines": {
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 0,
+            "34": 0,
+            "36": 1,
+            "37": 1
+          },
+          "Branches": [
+            {
+              "Line": 32,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 32,
+              "Offset": 20,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult HotelBooking.WebApi.Controllers.RoomsController::Post(HotelBooking.Core.Room)": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 7,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult HotelBooking.WebApi.Controllers.RoomsController::Delete(System.Int32)": {
+          "Lines": {
+            "56": 3,
+            "57": 3,
+            "58": 2,
+            "59": 2,
+            "60": 1,
+            "62": 1,
+            "63": 1,
+            "65": 2
+          },
+          "Branches": [
+            {
+              "Line": 57,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 57,
+              "Offset": 7,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult HotelBooking.WebApi.Controllers.RoomsController::DeleteAll()": {
+          "Lines": {
+            "70": 0,
+            "72": 0,
+            "73": 0,
+            "76": 0
+          },
+          "Branches": []
+        },
+        "System.Void HotelBooking.WebApi.Controllers.RoomsController::.ctor(HotelBooking.Core.IRepository`1<HotelBooking.Core.Room>)": {
+          "Lines": {
+            "15": 5,
+            "16": 5,
+            "17": 5,
+            "18": 5
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
